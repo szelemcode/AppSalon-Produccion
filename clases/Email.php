@@ -27,8 +27,17 @@ class Email {
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com','AppSalon.com');
+        // $mail->setFrom('cuentas@appsalon.com');//remplazamos por lo de debajo
+       // $mail->addAddress('cuentas@appsalon.com','AppSalon.com');remplazamos por lo de debajo
+        $mail->setFrom(
+        $_ENV['EMAIL_FROM'],
+        $_ENV['EMAIL_NAME']
+        );
+
+        $mail->addAddress(
+            $this->email,
+            $this->nombre
+        );
         $mail->Subject='Confirma tu cuenta';
 
         //set HTML
@@ -61,8 +70,18 @@ class Email {
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com','AppSalon.com');
+       // $mail->setFrom('cuentas@appsalon.com');//remplazamos por lo de debajo
+       // $mail->addAddress('cuentas@appsalon.com','AppSalon.com');remplazamos por lo de debajo
+        $mail->setFrom(
+        $_ENV['EMAIL_FROM'],
+        $_ENV['EMAIL_NAME']
+        );
+
+        $mail->addAddress(
+            $this->email,
+            $this->nombre
+        );
+
         $mail->Subject='Reestablece tu password';
 
         //set HTML

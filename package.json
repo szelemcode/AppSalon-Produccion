@@ -2,7 +2,7 @@
   "name": "app-salon-php-mvc-sass",
   "version": "1.0.0",
   "description": "AppSalon - Curso Desarrollo web Completo",
-  "author": "Juan De la torre @codigoconjuan",
+  "author": "Sebastian Belen @szelemcode",
   "main": "index.js",
   "type": "module",
   "scripts": {
