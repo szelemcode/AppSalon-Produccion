@@ -19,7 +19,7 @@ export function css( done ) {
         .pipe( sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError) )
-        .pipe( dest('./public/build/css', {sourcemaps: '.'}) );
+        .pipe( dest('./public_html/build/css', {sourcemaps: '.'}) );
     done()
 }
 
@@ -41,12 +41,12 @@ export function js() {//funcion para detectar si hay un error
             console.error('Columna:', error.col);
             this.emit('end');
         })
-        .pipe(dest('./public/build/js'));
+        .pipe(dest('./public_html/build/js'));
 }
 
 export async function imagenes(done) {
     const srcDir = './src/img';
-    const buildDir = './public/build/img';
+    const buildDir = './public_html/build/img';
     const images =  await glob('./src/img/**/*')
 
     images.forEach(file => {
