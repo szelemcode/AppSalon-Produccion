@@ -39,6 +39,8 @@ class Router
         //$currentUrl = $_SERVER['PATH_INFO'] ?? '/';
         //$currentUrl = strtoke($_SERVER['REQUEST_URI'],'?') ?? '/'; //opcion del tutorial extrae antes del ?
         $currentUrl =parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);//extrae solo el path
+        $currentUrl = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+        $currentUrl = rtrim($currentUrl, '/') ?: '/'; // le quita el / al final a menos que sea un '' 
        // $currentUrl = $_SERVER['REQUEST_URI'] ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 

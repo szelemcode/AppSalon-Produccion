@@ -31,8 +31,8 @@ class LoginController {
             $_SESSION['login']=true;
 
             //Redireccionar
-            if($usuario->admin === "1"){
-                $_SESSION['admin'] = $usuario->admin ?? null;
+            if($usuario->rol === "admin"){
+                $_SESSION['rol'] = $usuario->rol ?? 'cliente';
                 
                 header('Location:/admin');
             }else{

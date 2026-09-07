@@ -28,7 +28,8 @@ function isAuth() : void  {
 }
 
 function isAdmin() : void {
-    if(!isset($_SESSION['admin'])){
+    if (($_SESSION['rol'] ?? 'cliente') !== 'admin') {
         header('location: /');
+        exit;//para que PHP no siga ejecutando el código de la página protegida después de ordenar la redirección.
     }
 }
